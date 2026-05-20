@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- BASIC SEO -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>
+    Taxi Service in Mathura & Vrindavan | BrajCab
+  </title>
+
+  <meta name="description"
+    content="BrajCab provides premium taxi service in Mathura, Vrindavan, Govardhan, Barsana and all Braj areas. Book local cabs, airport transfers, temple tours and outstation taxis 24x7." />
+
+  <meta name="keywords"
+    content="Taxi Service Mathura, Vrindavan Cab Booking, Braj Taxi Service, Mathura Cab, Vrindavan Taxi, Delhi to Vrindavan Taxi, Agra Tour Taxi, Braj Tour Cab" />
+
+  <meta name="author" content="BrajCab">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://brajcab.com/">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="BrajCab - Taxi Service in Mathura & Vrindavan">
+  <meta property="og:description"
+    content="Book premium taxi service across Mathura, Vrindavan and all Braj areas.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://brajcab.com/">
+  <meta property="og:image"
+    content="https://brajcab.com/photos/krishna1.png">
+    
+  <!-- TWITTER SEO -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BrajCab - Taxi Service in Braj">
+  <meta name="twitter:description"
+    content="Trusted taxi booking service in Mathura, Vrindavan and all Braj regions.">
+  <meta name="twitter:image"
+    content="https://brajcab.com/photos/krishna2.png">
+
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- TAILWIND -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- SCHEMA MARKUP -->
+  <script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"TaxiService",
+"name":"BrajCab",
+"url":"https://brajcab.com",
+"logo":"https://brajcab.com/photos/krishna1.png",
+"description":"Premium taxi service in Mathura, Vrindavan and all Braj regions.",
+"telephone":"+918006565109",
+"priceRange":"₹₹",
+"areaServed":[
+"Mathura",
+"Vrindavan",
+"Govardhan",
+"Barsana",
+"Gokul",
+"Agra"
+],
+"availableLanguage":[
+"Hindi",
+"English"
+]
+}
+</script>
+
+  <!-- FAQ SCHEMA -->
+
+  <script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{
+"@type":"Question",
+"name":"Do you provide Delhi airport pickup?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Yes, BrajCab provides 24x7 airport pickup and drop services."
+}
+},
+{
+"@type":"Question",
+"name":"Do you provide local taxi in Vrindavan?",
+"acceptedAnswer":{
+"@type":"Answer",
+"text":"Yes, we provide local cab service in Vrindavan for temple visits and tours."
+}
+}
+]
+}
+</script>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Inter',sans-serif;
+      background:#071021;
+      overflow-x:hidden;
+      color:white;
+    }
+
+    /* LOADER */
+
+    #loader{
+      position:fixed;
+      width:100%;
+      height:100vh;
+      background:#071021;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:99999;
+      flex-direction:column;
+    }
+
+    .loader-circle{
+      width:90px;
+      height:90px;
+      border:5px solid rgba(255,255,255,.1);
+      border-top:5px solid #ffb300;
+      border-radius:50%;
+      animation:spin 1s linear infinite;
+      margin-bottom:20px;
+    }
+
+    @keyframes spin{
+      100%{
+        transform:rotate(360deg);
+      }
+    }
+
+    /* HERO */
+
+    .hero{
+      background:
+      linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.8)),
+      url('photos/krishna2.jpg');
+
+      background-size:cover;
+      background-position:center;
+      background-attachment:fixed;
+    }
+
+    .glass{
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.1);
+      backdrop-filter:blur(14px);
+    }
+
+    .gradient-text{
+      background:linear-gradient(45deg,#ffd54f,#ff9800,#ffee58);
+      background-clip: border-box;
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+    }
+
+    .gold-btn{
+      background:linear-gradient(45deg,#ffb300,#ff6f00);
+      color:black;
+      font-weight:bold;
+      box-shadow:0 0 20px rgba(255,183,0,.5);
+      transition:.4s;
+    }
+
+    .gold-btn:hover{
+      transform:translateY(-4px);
+      box-shadow:0 0 35px rgba(255,183,0,.9);
+    }
+
+    .section-title{
+      font-family:'Cinzel',serif;
+    }
+
+    .floating{
+      animation:floating 4s ease-in-out infinite;
+    }
+
+    @keyframes floating{
+      0%{transform:translateY(0px);}
+      50%{transform:translateY(-12px);}
+      100%{transform:translateY(0px);}
+    }
+
+    .service-card{
+      transition:.5s;
+    }
+
+    .service-card:hover{
+      transform:translateY(-10px);
+      background:linear-gradient(180deg,#152744,#22395d);
+    }
+
+    .whatsapp{
+      position:fixed;
+      right:20px;
+      bottom:20px;
+      z-index:999;
+      animation:floating 3s infinite;
+    }
+
+    .particle{
+      position:absolute;
+      width:6px;
+      height:6px;
+      background:#ffeb3b;
+      border-radius:50%;
+      animation:particle 12s linear infinite;
+      opacity:.6;
+    }
+
+    @keyframes particle{
+      0%{
+        transform:translateY(100vh) scale(0);
+      }
+
+      100%{
+        transform:translateY(-100vh) scale(1);
+      }
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- LOADER -->
+
+  <div id="loader">
+
+    <div class="loader-circle"></div>
+
+    <h2 class="gradient-text text-3xl font-bold">
+      BrajCab
+    </h2>
+
+  </div>
+
+  <!-- FLOATING PARTICLES -->
+
+  <div class="particle" style="left:10%;animation-delay:0s;"></div>
+  <div class="particle" style="left:30%;animation-delay:2s;"></div>
+  <div class="particle" style="left:50%;animation-delay:4s;"></div>
+  <div class="particle" style="left:70%;animation-delay:1s;"></div>
+  <div class="particle" style="left:90%;animation-delay:3s;"></div>
+
+  <!-- NAVBAR -->
+
+  <nav class="fixed top-0 w-full z-50 glass px-6 py-4">
+
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+
+      <h1 class="section-title text-3xl font-bold gradient-text">
+        BrajCab
+      </h1>
+
+      <div class="hidden md:flex gap-8 font-medium">
+
+        <a href="#home" class="hover:text-yellow-400 transition">
+          Home
+        </a>
+
+        <a href="#services" class="hover:text-yellow-400 transition">
+          Services
+        </a>
+
+        <a href="#gallery" class="hover:text-yellow-400 transition">
+          Gallery
+        </a>
+
+        <a href="#faq" class="hover:text-yellow-400 transition">
+          FAQ
+        </a>
+
+      </div>
+
+      <a href="tel:+918006565109"
+        class="gold-btn px-6 py-3 rounded-full">
+        Call Now
+      </a>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO -->
+
+  <section id="home"
+    class="hero min-h-screen flex items-center relative px-6">
+
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-14 items-center">
+
+      <div>
+
+        <p class="uppercase tracking-[5px] text-yellow-400 mb-5 font-semibold">
+          Premium Taxi Service In Braj
+        </p>
+
+        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-8 font-[Poppins]">
+
+          Divine Journey Through
+          <span class="gradient-text">
+            Mathura & Vrindavan
+          </span>
+
+        </h1>
+
+        <p class="text-lg text-gray-200 leading-8 mb-10 max-w-xl">
+
+          Trusted cab booking service for Mathura, Vrindavan,
+          Govardhan, Barsana and airport transfers.
+          Safe, clean and comfortable taxi service available 24×7.
+
+        </p>
+
+        <div class="flex flex-wrap gap-5">
+
+          <a href="https://wa.me/918006565109"
+            class="gold-btn px-8 py-4 rounded-full text-lg">
+
+            Book on WhatsApp
+
+          </a>
+
+          <a href="#services"
+            class="border border-yellow-400 px-8 py-4 rounded-full hover:bg-yellow-400 hover:text-black transition">
+
+            Explore Services
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="flex justify-center">
+
+        <img
+          src="photos/krishna1.png"
+          alt="Taxi Service in Mathura"
+          class="w-full max-w-2xl floating"
+          loading="lazy">
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SERVICES -->
+
+  <section id="services"
+    class="py-24 px-6 bg-[#091427]">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-16">
+
+        <h2 class="section-title text-5xl font-bold gradient-text mb-5">
+          Our Taxi Services
+        </h2>
+
+        <p class="text-gray-300 text-lg">
+          Reliable taxi booking services across all Braj regions.
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="glass rounded-3xl p-8 service-card">
+
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">
+            Mathura Taxi Service
+          </h3>
+
+          <p class="text-gray-300 leading-8">
+            Comfortable local cab booking for railway station, temples and city tours.
+          </p>
+
+        </div>
+
+        <div class="glass rounded-3xl p-8 service-card">
+
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">
+            Vrindavan Cab Booking
+          </h3>
+
+          <p class="text-gray-300 leading-8">
+            Temple darshan, local sightseeing and parikrama taxi service.
+          </p>
+
+        </div>
+
+        <div class="glass rounded-3xl p-8 service-card">
+
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">
+            Delhi Airport Pickup
+          </h3>
+
+          <p class="text-gray-300 leading-8">
+            Fast airport transfer from Delhi to Mathura and Vrindavan.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- GALLERY -->
+
+  <section id="gallery"
+    class="py-24 px-6">
+
+    <div class="max-w-7xl mx-auto">
+
+      <div class="text-center mb-16">
+
+        <h2 class="section-title text-5xl font-bold gradient-text mb-5">
+          Our Premium Fleet
+        </h2>
+
+        <p class="text-gray-300 text-lg">
+          Clean and trusted cars for your Braj journey
+        </p>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="glass rounded-3xl overflow-hidden service-card">
+
+          <img
+            src="photos/car2.jpg"
+            alt="Swift Dzire Taxi Service"
+            class="w-full h-72 object-cover"
+            loading="lazy">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-bold text-yellow-400 mb-3">
+              Swift Dzire
+            </h3>
+
+            <p class="text-gray-300 mb-5">
+              Perfect sedan for local taxi and airport transfer.
+            </p>
+
+            <a href="https://wa.me/918006565109"
+              class="gold-btn px-6 py-3 rounded-full inline-block">
+
+              Book Now
+
+            </a>
+
+            <a href="gallery.html" class="gold-btn px-10 py-3 rounded-full inline-block">
+              View Gallery
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="glass rounded-3xl overflow-hidden service-card">
+
+          <img
+            src="photos/car21.webp"
+            alt="SUV Taxi Service"
+            class="w-full h-72 object-cover"
+            loading="lazy">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-bold text-yellow-400 mb-3">
+              SUV Taxi
+            </h3>
+
+            <p class="text-gray-300 mb-5">
+              Comfortable SUV for family and long-distance tours.
+            </p>
+
+            <a href="https://wa.me/918006565109"
+              class="gold-btn px-6 py-3 rounded-full inline-block">
+
+              Book Now
+
+            </a>
+
+            <a href="gallery.html" class="gold-btn px-10 py-3 rounded-full inline-block">
+              View Gallery
+            </a>
+
+          </div>
+
+        </div>
+
+        <div class="glass rounded-3xl overflow-hidden service-card">
+
+          <img
+            src="photos/car8.jpg"
+            alt="Luxury Taxi Service"
+            class="w-full h-72 object-cover"
+            loading="lazy">
+
+          <div class="p-6">
+
+            <h3 class="text-2xl font-bold text-yellow-400 mb-3">
+              Luxury Car
+            </h3>
+
+            <p class="text-gray-300 mb-5">
+              Premium luxury travel for weddings and VIP rides.
+            </p>
+
+            <a href="https://wa.me/918006565109"
+              class="gold-btn px-6 py-3 rounded-full inline-block">
+
+              Book Now
+
+            </a>
+            <a href="gallery.html" class="gold-btn px-10 py-3 rounded-full inline-block">
+              View Gallery
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+
+  <section id="faq"
+    class="py-24 px-6 bg-[#091427]">
+
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-16">
+
+        <h2 class="section-title text-5xl font-bold gradient-text mb-5">
+          Frequently Asked Questions
+        </h2>
+
+      </div>
+
+      <div class="space-y-6">
+
+        <div class="glass p-8 rounded-3xl">
+
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">
+            Do you provide Delhi airport pickup?
+          </h3>
+
+          <p class="text-gray-300 leading-8">
+            Yes, BrajCab provides 24×7 airport pickup and drop service.
+          </p>
+
+        </div>
+
+        <div class="glass p-8 rounded-3xl">
+
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">
+            Do you provide local taxi in Vrindavan?
+          </h3>
+
+          <p class="text-gray-300 leading-8">
+            Yes, we provide local cab service for temple tours and sightseeing.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="py-24 px-6 relative overflow-hidden">
+
+    <div class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-500"></div>
+
+    <div class="max-w-5xl mx-auto relative z-10 text-center">
+
+      <h2 class="text-5xl font-extrabold text-black mb-8">
+
+        Book Your Braj Journey Today
+
+      </h2>
+
+      <p class="text-black text-xl mb-10">
+
+        Taxi available for Mathura, Vrindavan,
+        Govardhan, Barsana and all Braj regions.
+
+      </p>
+
+      <a href="https://wa.me/918006565109"
+        class="bg-black text-white px-10 py-5 rounded-full text-lg font-bold hover:scale-105 transition">
+
+        Book Now
+
+      </a>
+
+    </div>
+
+    <!-- HOTEL PARTNER SECTION -->
+
+<section class="py-24 px-6 bg-[#071021]">
+
+  <div class="max-w-7xl mx-auto">
+
+    <div class="glass rounded-[40px] overflow-hidden grid lg:grid-cols-2 items-center">
+
+      <div class="p-10 lg:p-16">
+
+        <p class="uppercase tracking-[4px] text-yellow-400 mb-4 font-semibold">
+          Trusted Hotel Partner
+        </p>
+
+        <h2 class="section-title text-5xl font-bold gradient-text mb-8">
+          Stay Comfortably In Vrindavan
+        </h2>
+
+        <p class="text-gray-300 text-lg leading-9 mb-8">
+          BrajCab proudly partners with Hotel Shanti Palace for comfortable and affordable stay options in Vrindavan. Perfect for pilgrims, families and spiritual travelers visiting Braj Bhoomi.
+        </p>
+
+        <div class="flex flex-wrap gap-5">
+
+          <a href="https://hotelshantipalace.in"
+            target="_blank"
+            class="gold-btn px-8 py-4 rounded-full inline-block">
+
+            Visit Hotel Website
+
+          </a>
+
+          <a href="https://wa.me/918006565109"
+             target="_blank"
+            class="border border-yellow-400 px-8 py-4 rounded-full hover:bg-yellow-400 hover:text-black transition">
+
+            Book Taxi + Hotel
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <div class="relative h-full min-h-[500px]">
+
+        <img
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1600&auto=format&fit=crop"
+          alt="Hotel in Vrindavan"
+          class="w-full h-full object-cover">
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer class="bg-black py-14 px-6">
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-10">
+
+      <div>
+
+        <h3 class="section-title text-4xl gradient-text mb-5">
+          BrajCab
+        </h3>
+
+        <p class="text-gray-400 leading-8">
+
+          Premium taxi booking service in Mathura,
+          Vrindavan and all Braj areas.
+
+        </p>
+
+      </div>
+
+      <div>
+
+        <h4 class="text-2xl font-bold text-yellow-400 mb-5">
+          Quick Links
+        </h4>
+
+        <ul class="space-y-3 text-gray-300">
+
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Taxi Service</a></li>
+          <li><a href="#">Airport Pickup</a></li>
+          <li><a href="#">Braj Tour</a></li>
+
+        </ul>
+
+      </div>
+
+      <div>
+
+        <h4 class="text-2xl font-bold text-yellow-400 mb-5">
+          Contact
+        </h4>
+
+        <p class="text-gray-300 mb-3">
+          📞 +91 80065 65109
+        </p>
+
+        <p class="text-gray-300 mb-3">
+          ✉️ vivekchaudhary5202@gmail.com
+        </p>
+
+        <p class="text-gray-300">
+          Available 24×7 Across Braj Region
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="border-t border-gray-800 mt-10 pt-6 text-center text-gray-500">
+
+      © 2026 BrajCab.com — All Rights Reserved
+
+    </div>
+
+  </footer>
+
+  <!-- WHATSAPP BUTTON -->
+
+  <a href="https://wa.me/918006565109"
+    class="whatsapp">
+
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/733/733585.png"
+      width="70"
+      alt="WhatsApp Booking">
+
+  </a>
+
+  <!-- LOADER SCRIPT -->
+
+  <script>
+
+    window.addEventListener("load",function(){
+
+      document.getElementById("loader").style.display="none";
+
+    });
+
+  </script>
+
+</body>
+
+</html>
