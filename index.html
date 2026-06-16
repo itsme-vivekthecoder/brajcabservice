@@ -217,6 +217,12 @@
       bottom:20px;
       z-index:999;
       animation:floating 3s infinite;
+      transition:.3s ease;
+    }
+
+    .whatsapp:hover{
+      transform:scale(1.1);
+      filter:brightness(1.2);
     }
 
     .particle{
@@ -237,6 +243,200 @@
       100%{
         transform:translateY(-100vh) scale(1);
       }
+    }
+
+    /* ENHANCED NAVBAR */
+    nav{
+      backdrop-filter:blur(16px)!important;
+      border-bottom:1px solid rgba(255,183,0,.2);
+    }
+
+    .nav-link{
+      position:relative;
+      padding-bottom:4px;
+      transition:.3s;
+    }
+
+    .nav-link::after{
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:0;
+      height:2px;
+      background:linear-gradient(45deg,#ffd54f,#ff9800);
+      transition:.3s;
+    }
+
+    .nav-link:hover::after{
+      width:100%;
+    }
+
+    .dropdown-menu{
+      position:absolute;
+      top:100%;
+      left:0;
+      min-width:220px;
+      background:rgba(7,16,33,.95);
+      border:1px solid rgba(255,183,0,.3);
+      border-radius:12px;
+      padding:12px 0;
+      opacity:0;
+      visibility:hidden;
+      transform:translateY(-10px);
+      transition:.3s ease;
+      z-index:1000;
+      backdrop-filter:blur(16px);
+      box-shadow:0 10px 40px rgba(0,0,0,.5);
+    }
+
+    .services-nav:hover .dropdown-menu{
+      opacity:1;
+      visibility:visible;
+      transform:translateY(0);
+    }
+
+    .dropdown-item{
+      display:block;
+      padding:12px 20px;
+      color:#fff;
+      text-decoration:none;
+      transition:.2s;
+      font-size:0.95rem;
+      border-left:3px solid transparent;
+    }
+
+    .dropdown-item:hover{
+      background:rgba(255,183,0,.1);
+      border-left-color:#ffb300;
+      padding-left:24px;
+      color:#ffd54f;
+    }
+
+    /* ENHANCED SERVICE GRID */
+    .service-card{
+      position:relative;
+      overflow:hidden;
+      border:2px solid transparent;
+      transition:.4s cubic-bezier(0.23,1,0.320,1);
+    }
+
+    .service-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,183,0,.1),transparent);
+      transition:.5s;
+      z-index:1;
+    }
+
+    .service-card:hover::before{
+      left:100%;
+    }
+
+    .service-card:hover{
+      transform:translateY(-12px) scale(1.02);
+      border-color:rgba(255,183,0,.3);
+      box-shadow:0 20px 40px rgba(255,183,0,.2),inset 0 1px 0 rgba(255,255,255,.1);
+      background:rgba(255,183,0,.05)!important;
+    }
+
+    /* SEO LINKS SECTION */
+    .seo-links{
+      background:linear-gradient(135deg,#0a0f1f 0%,#091427 50%,#0a0f1f 100%);
+      padding:60px 24px;
+      border-top:2px solid rgba(255,183,0,.2);
+      border-bottom:2px solid rgba(255,183,0,.2);
+    }
+
+    .seo-links .container{
+      max-width:1280px;
+      margin:0 auto;
+    }
+
+    .seo-links h2{
+      font-size:2.5rem;
+      color:#ffd54f;
+      text-align:center;
+      margin-bottom:12px;
+      font-weight:700;
+      letter-spacing:1px;
+    }
+
+    .seo-links > p{
+      text-align:center;
+      color:#aaa;
+      margin-bottom:40px;
+      font-size:1.05rem;
+    }
+
+    .routes-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:16px;
+    }
+
+    .route-card{
+      background:rgba(255,183,0,.08);
+      border:2px solid rgba(255,183,0,.2);
+      color:#fff;
+      text-decoration:none;
+      padding:20px 16px;
+      border-radius:12px;
+      text-align:center;
+      font-weight:600;
+      transition:.3s cubic-bezier(0.23,1,0.320,1);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:80px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .route-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,183,0,.3),transparent);
+      transition:.4s;
+    }
+
+    .route-card:hover::before{
+      left:100%;
+    }
+
+    .route-card:hover{
+      background:rgba(255,183,0,.15);
+      border-color:rgba(255,183,0,.5);
+      color:#ffd54f;
+      box-shadow:0 15px 35px rgba(255,183,0,.15),inset 0 1px 0 rgba(255,255,255,.1);
+      transform:translateY(-4px);
+    }
+
+    /* ENHANCED FOOTER */
+    footer{
+      background:linear-gradient(180deg,#000 0%,#0a0a14 100%);
+      border-top:2px solid rgba(255,183,0,.2);
+    }
+
+    footer h3, footer h4{
+      text-shadow:0 2px 10px rgba(0,0,0,.3);
+    }
+
+    footer a{
+      transition:.3s;
+    }
+
+    footer a:hover{
+      color:#ffd54f;
+      text-shadow:0 0 10px rgba(255,183,0,.3);
     }
 
   </style>
@@ -275,21 +475,38 @@
         BrajCab
       </h1>
 
-      <div class="hidden md:flex gap-8 font-medium">
+      <div class="hidden md:flex gap-8 font-medium items-center">
 
-        <a href="#home" class="hover:text-yellow-400 transition">
+        <a href="#home" class="nav-link">
           Home
         </a>
 
-        <a href="#services" class="hover:text-yellow-400 transition">
-          Services
-        </a>
+        <div class="services-nav relative">
+          <button class="nav-link flex items-center gap-2">
+            Services
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="mathura-taxi-service.html" class="dropdown-item">Mathura Taxi</a>
+            <a href="vrindavan-cab-booking.html" class="dropdown-item">Vrindavan Taxi</a>
+            <a href="delhi-airport-taxi.html" class="dropdown-item">Delhi Airport</a>
+            <a href="agra-tour-taxi.html" class="dropdown-item">Agra Tours</a>
+            <a href="barsana-tour.html" class="dropdown-item">Barsana Tour</a>
+            <a href="gokul-tour.html" class="dropdown-item">Gokul Tour</a>
+            <a href="govardhan-tour-cab.html" class="dropdown-item">Govardhan Tour</a>
+            <a href="pilgrimage-tours.html" class="dropdown-item">Pilgrimage Tours</a>
+            <a href="one-way-taxi-service.html" class="dropdown-item">One Way Taxi</a>
+            <a href="outstation-taxi-service.html" class="dropdown-item">Outstation Taxi</a>
+          </div>
+        </div>
 
-        <a href="#gallery" class="hover:text-yellow-400 transition">
+        <a href="gallery.html" class="nav-link">
           Gallery
         </a>
 
-        <a href="#faq" class="hover:text-yellow-400 transition">
+        <a href="#faq" class="nav-link">
           FAQ
         </a>
 
@@ -387,9 +604,9 @@
 
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-        <div class="glass rounded-3xl p-8 service-card">
+        <a href="mathura-taxi-service.html" class="glass rounded-3xl p-8 service-card block hover:no-underline h-full" style="border-radius:16px;">
 
           <h3 class="text-2xl font-bold text-yellow-400 mb-4">
             Mathura Taxi Service
@@ -399,9 +616,9 @@
             Comfortable local cab booking for railway station, temples and city tours.
           </p>
 
-        </div>
+        </a>
 
-        <div class="glass rounded-3xl p-8 service-card">
+        <a href="vrindavan-cab-booking.html" class="glass rounded-3xl p-8 service-card block hover:no-underline h-full" style="border-radius:16px;">
 
           <h3 class="text-2xl font-bold text-yellow-400 mb-4">
             Vrindavan Cab Booking
@@ -411,9 +628,9 @@
             Temple darshan, local sightseeing and parikrama taxi service.
           </p>
 
-        </div>
+        </a>
 
-        <div class="glass rounded-3xl p-8 service-card">
+        <a href="delhi-airport-taxi.html" class="glass rounded-3xl p-8 service-card block hover:no-underline h-full" style="border-radius:16px;">
 
           <h3 class="text-2xl font-bold text-yellow-400 mb-4">
             Delhi Airport Pickup
@@ -423,12 +640,103 @@
             Fast airport transfer from Delhi to Mathura and Vrindavan.
           </p>
 
-        </div>
+        </a>
+
+        <a href="barsana-tour.html" class="glass rounded-3xl p-8 service-card block hover:no-underline h-full" style="border-radius:16px;">
+
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">
+            Barsana Tour
+          </h3>
+
+          <p class="text-gray-300 leading-8">
+            Secure taxi service for Barsana temple tours, Lathmar and local pilgrimage travel.
+          </p>
+
+        </a>
+
+        <a href="one-way-taxi-service.html" class="glass rounded-3xl p-8 service-card block hover:no-underline h-full" style="border-radius:16px;">
+
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">
+            One Way Taxi
+          </h3>
+
+          <p class="text-gray-300 leading-8">
+            One-way routes from Delhi, Agra, Mathura and Vrindavan with clear pricing.
+          </p>
+
+        </a>
+
+        <a href="outstation-taxi-service.html" class="glass rounded-3xl p-8 service-card block hover:no-underline h-full" style="border-radius:16px;">
+
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">
+            Outstation Taxi
+          </h3>
+
+          <p class="text-gray-300 leading-8">
+            Comfortable long-distance taxi travel across Braj region and nearby cities.
+          </p>
+
+        </a>
+
+        <a href="gokul-tour.html" class="glass rounded-3xl p-8 service-card block hover:no-underline h-full" style="border-radius:16px;">
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">Gokul Tour</h3>
+          <p class="text-gray-300 leading-8">Sacred temples, Krishna pilgrimage sites and local Braj dham travel in Gokul.</p>
+        </a>
+
+        <a href="govardhan-tour-cab.html" class="glass rounded-3xl p-8 service-card block hover:no-underline h-full" style="border-radius:16px;">
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">Govardhan Tour</h3>
+          <p class="text-gray-300 leading-8">Parikrama, Radha Kund and sacred spiritual pilgrimage in Govardhan hills.</p>
+        </a>
+
+        <a href="pilgrimage-tours.html" class="glass rounded-3xl p-8 service-card block hover:no-underline h-full" style="border-radius:16px;">
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">Pilgrimage Tours</h3>
+          <p class="text-gray-300 leading-8">Complete Braj dham spiritual journey with custom itineraries for all sacred sites.</p>
+        </a>
+
+        <a href="delhi-to-vrindavan-taxi.html" class="glass rounded-3xl p-8 service-card block hover:no-underline h-full" style="border-radius:16px;">
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">Delhi to Vrindavan</h3>
+          <p class="text-gray-300 leading-8">Direct airport and hotel transfers from Delhi to Vrindavan with expert guidance.</p>
+        </a>
+
+        <a href="delhi-to-mathura-taxi.html" class="glass rounded-3xl p-8 service-card block hover:no-underline h-full" style="border-radius:16px;">
+          <h3 class="text-2xl font-bold text-yellow-400 mb-4">Delhi to Mathura</h3>
+          <p class="text-gray-300 leading-8">Comfortable and safe transfers from Delhi airport to Mathura city and temples.</p>
+        </a>
 
       </div>
 
     </div>
 
+  </section>
+
+  <section class="py-24 px-6 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="section-title text-5xl font-bold gradient-text mb-5">
+          Why Choose BrajCab
+        </h2>
+        <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+          Trusted local taxi service for Braj dham visitors, airport transfers, pilgrimage tours and private travel across Mathura, Vrindavan and surrounding areas.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass rounded-3xl p-10 hover:shadow-lg hover:shadow-yellow-400/20 transition-all duration-300">
+          <div class="text-5xl font-bold text-yellow-400 mb-4">24/7</div>
+          <h3 class="text-2xl font-bold text-white mb-4">Local Support</h3>
+          <p class="text-gray-300 leading-8">Book any time and get quick responses from our local driver team in Braj region.</p>
+        </div>
+        <div class="glass rounded-3xl p-10 hover:shadow-lg hover:shadow-yellow-400/20 transition-all duration-300">
+          <svg class="w-12 h-12 text-yellow-400 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2m4-4l2 2m-6-4h.01M9 3a9 9 0 110 18A9 9 0 019 3zm0 0h6m-6 0v6m0-6H3m6 6v6m0-6h6m-6 6h6m0-6v-6"/></svg>
+          <h3 class="text-2xl font-bold text-white mb-4">Transparent Fares</h3>
+          <p class="text-gray-300 leading-8">No hidden charges, fixed route pricing and clear taxi rates for every journey.</p>
+        </div>
+        <div class="glass rounded-3xl p-10 hover:shadow-lg hover:shadow-yellow-400/20 transition-all duration-300">
+          <svg class="w-12 h-12 text-yellow-400 mb-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+          <h3 class="text-2xl font-bold text-white mb-4">Comfortable Fleet</h3>
+          <p class="text-gray-300 leading-8">Clean cars, experienced drivers and trusted service for family tours, airport transfers and spiritual travel.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- GALLERY -->
@@ -692,6 +1000,27 @@
 
 </section>
 
+<section class="seo-links">
+    <div class="container">
+        <h2>Popular Taxi Services</h2>
+        <p>Explore our most booked routes and travel services.</p>
+
+        <div class="routes-grid">
+            <a href="mathura-taxi-service.html" class="route-card">Mathura Taxi Service</a>
+            <a href="vrindavan-cab-booking.html" class="route-card">Vrindavan Taxi Service</a>
+            <a href="agra-tour-taxi.html" class="route-card">Agra Taxi Service</a>
+            <a href="delhi-airport-taxi.html" class="route-card">Delhi Airport Taxi</a>
+            <a href="one-way-taxi-service.html" class="route-card">One Way Taxi</a>
+            <a href="outstation-taxi-service.html" class="route-card">Outstation Taxi</a>
+            <a href="barsana-tour.html" class="route-card">Barsana Tour</a>
+            <a href="gokul-tour.html" class="route-card">Gokul Tour</a>
+            <a href="pilgrimage-tours.html" class="route-card">Pilgrimage Tours</a>
+            <a href="delhi-to-vrindavan-taxi.html" class="route-card">Delhi to Vrindavan Taxi</a>
+            <a href="delhi-to-mathura-taxi.html" class="route-card">Delhi to Mathura Taxi</a>
+        </div>
+    </div>
+</section>
+
   </section>
 
   <!-- FOOTER -->
@@ -723,10 +1052,12 @@
 
         <ul class="space-y-3 text-gray-300">
 
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Taxi Service</a></li>
-          <li><a href="#">Airport Pickup</a></li>
-          <li><a href="#">Braj Tour</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="mathura-taxi-service.html">Mathura Taxi</a></li>
+          <li><a href="vrindavan-cab-booking.html">Vrindavan Taxi</a></li>
+          <li><a href="delhi-airport-taxi.html">Airport Pickup</a></li>
+          <li><a href="outstation-taxi-service.html">Outstation Taxi</a></li>
+          <li><a href="gokul-tour.html">Gokul Tour</a></li>
 
         </ul>
 
